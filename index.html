@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <title>Document</title>
+    <style>
+        x-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-gray-100 bg-gray-800">
+    <!-- Navbar -->
+    <nav class="p-5 bg-gray-900" x-data="{togle:false}">
+        <!-- change max-w-5xl if want to make wider or narrower navbar ex: w-max-lg or w-full -->
+        <div class="flex items-center justify-between max-w-5xl mx-auto"> 
+            <!-- Logo -->
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+            </a>
+            <!-- Mobile App Title -->
+            <div class="block w-full py-2 font-bold text-center sm:hidden hover:">Tailwind CSS and Alpine JS</div>
+            <!-- Menu -->
+            <div class="hidden sm:block">
+                <div class="flex items-center justify-center space-x-5 ">
+                    <a href="#" class="px-2 py-2 font-bold text-gray-300 hover:text-sky-500">Home</a>
+                    <a href="#" class="px-2 py-2 font-bold text-gray-300 hover:text-sky-500">Blog</a>
+                    <a href="#" class="px-2 py-2 font-bold text-gray-300 hover:text-sky-500">Contact</a>
+                    <!-- <a href="#" class="px-2 py-2 font-bold text-gray-300 hover:text-sky-500">Pricing</a> -->
+                    <a href="#" class="px-2 py-2 font-bold text-gray-300 hover:text-sky-500">About</a>
+                </div>
+            </div>
+            <!-- Login Button -->
+            <a href="#" class="hidden px-5 py-2 font-bold uppercase bg-gray-700 rounded-lg sm:block">Login</a>
+            <!-- Username and Email -->
+            <!-- make the logic for this part if you want to show the username and email when the user is logged in -->
+            <!-- <div class="hidden sm:block">
+                <h3 class="font-normal text-right">Username</h3>
+                <h3 class="text-xs">username@mail.com</h3>
+            </div> -->
+            <!-- Mobile Menu Button -->
+            <button class="block sm:hidden" x-on:click="togle=!togle" x>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            
+        </div>
+        <!-- Mobile Div -->
+        <div class="items-center block max-w-3xl mx-auto mt-5 rounded-lg sm:hidden" x-show="togle" x-transition
+            x-cloak>
+            <!-- Menu Mobile -->
+            <ul class="pt-5 space-y-2">
+                <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">Home</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">Blog</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">Contact</a>
+                </li>
+                <!-- <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">Pricing</a>
+                </li> -->
+                <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">About</a>
+                </li>
+            </ul>
+            <!-- Login and Register Button -->
+            <ul class="pt-5 space-y-2">
+                <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">Register</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block px-4 py-2 font-bold text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700">Login</a>
+                </li>
+            </ul>
+            <!-- Username and Email -->
+            <!-- make the logic for this part if you want to show the username and email when the user is logged in -->
+            <!-- <div class="pt-5 space-y-2">
+                <h3 class="font-semibold">Username</h3>
+                <h3 class="font-normal">username@mail.com</h3>
+            </div> -->
+        </div>
+    </nav>
+    <!-- Content -->
+    <div class="flex justify-center min-h-screen bg-gray-700 place-items-center">Content</div>
+</body>
+
+</html>
